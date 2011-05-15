@@ -1,0 +1,12 @@
+Debug/*
+Restore/*
+*.log
+*.TXT
+*.txt
+*.lcf
+*.jrf
+*.DMP
+*.map
+*.qrf
+*.slo
+-*
