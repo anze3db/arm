@@ -43,7 +43,9 @@ _start:
 /* main program */
 _main:
 /* user code */
-  
+_1:
+ldr r2, STEV1
+str r2, STEV2
 
 /* end user code */
 
@@ -52,7 +54,8 @@ _wait_for_ever:
 
 
 /* variables here */
-
+STEV1: .word 0x1234
+STEV2: .word 0x4321
 /* end variables */
 
   .align
