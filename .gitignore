@@ -9,4 +9,6 @@ Restore/*
 *.map
 *.qrf
 *.slo
+*.ini
 -*
+*.ind
