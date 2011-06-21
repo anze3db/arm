@@ -44,6 +44,11 @@ __start:
 /* main program */
 _main:
 /* user code */
+b _prob1
+_utr1:
+
+ldr r1, VAR1
+str r1, VAR2
 
 _prob8:
 mov r0, #2
@@ -199,7 +204,9 @@ ldrh r1, VAR4
 
 ldrsh r1, VAR4
 
-
+.utrd1:
+ldr r0, STEV1  
+str r0, STEV2
 
 /* end user code */
 
@@ -208,6 +215,8 @@ _wait_for_ever:
 
 
 /* variables here */       
+STEV1: .word 0x333
+STEV2: .word 0x444
   
 TABLE7: .hword 1, -1, 2, -4, 0
 
