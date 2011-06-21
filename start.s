@@ -43,6 +43,13 @@ _start:
 /* main program */
 _main:
 /* user code */
+_2:
+ldr r1, STEV1
+ldr r2, STEV2
+add r1, r2
+str r1, REZ
+
+
 _1:
 ldr r2, STEV1
 str r2, STEV2
@@ -56,6 +63,7 @@ _wait_for_ever:
 /* variables here */
 STEV1: .word 0x1234
 STEV2: .word 0x4321
+REZ: .word 0x0
 /* end variables */
 
   .align
