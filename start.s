@@ -44,11 +44,20 @@ _start:
 _main:
 /* user code */
 _2:
-ldr r1, STEV1
-ldr r2, STEV2
-add r1, r2
+ldr r0, STEV1
+ldr r1, STEV2
+add r1, r0  
 str r1, REZ
 
+ldrb r0, STEV1b
+ldrb r1, STEV2b
+add r1, r0
+strb r1, REZb
+
+ldrh r0, STEV1h
+ldrh r1, STEV2h
+add r1, r0
+strh r1, REZh
 
 _1:
 ldr r2, STEV1
@@ -61,9 +70,18 @@ _wait_for_ever:
 
 
 /* variables here */
-STEV1: .word 0x1234
-STEV2: .word 0x4321
-REZ: .word 0x0
+.align 4
+REZ:   .space 4
+STEV1: .word 0x333
+STEV2: .word 0x444
+
+REZb:  .space 1
+STEV1b: .byte 0x2
+STEV2b: .byte 0x3
+.align 4
+REZh:  .space 2
+STEV1h: .hword 0x5
+STEV2h: .hword 0x6
 /* end variables */
 
   .align
