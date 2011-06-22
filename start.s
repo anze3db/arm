@@ -43,6 +43,18 @@ _start:
 /* main program */
 _main:
 /* user code */
+_3:
+adr r0, BIG_STEV1
+adr r1, BIG_STEV2
+adr r2, BIG_REZ
+ldm r0, {r3, r4, r5, r6}
+ldm r1, {r7, r8, r9, r10}
+adds r6, r10
+adcs r5, r9
+adcs r4, r8
+adcs r3, r7
+stm r2, {r3, r4, r5, r6}
+
 _2:
 ldr r0, STEV1
 ldr r1, STEV2
@@ -71,6 +83,10 @@ _wait_for_ever:
 
 /* variables here */
 .align 4
+BIG_STEV1: .word 0x1, 0x2, 0x3, 0xFFFFFFFB
+BIG_STEV2: .word 0x9, 0x8, 0x7, 0x6
+BIG_REZ:   .space 16
+
 REZ:   .space 4
 STEV1: .word 0x333
 STEV2: .word 0x444
