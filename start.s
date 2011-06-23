@@ -43,6 +43,13 @@ _start:
 /* main program */
 _main:
 /* user code */
+_6:
+ldrsh r1, _6STEV1 
+ldrb  r2, _6STEV2
+ldrsb r3, _6STEV3
+add r2, r3
+sub r2, r1
+
 _3:
 adr r0, BIG_STEV1
 adr r1, BIG_STEV2
@@ -83,6 +90,10 @@ _wait_for_ever:
 
 /* variables here */
 .align 4
+_6STEV1: .hword -10
+_6STEV2: .byte 0x64
+_6STEV3: .byte -2
+
 BIG_STEV1: .word 0x1, 0x2, 0x3, 0xFFFFFFFB
 BIG_STEV2: .word 0x9, 0x8, 0x7, 0x6
 BIG_REZ:   .space 16
