@@ -119,6 +119,27 @@ ldr r2, STEV2
 cmp r2, r1
 movgt r1, r2
 
+_15:
+mov r0, #10
+ldr r1, =123345
+mov r2, #4
+bl podpr15
+b _wait_for_ever
+
+podpr15:
+stmfd sp!, {r3-r4, lr}
+ldr r3, =0xFFFFFFFF
+mvn r3, r3, lsr r2
+
+mov r4, r1, ror r2
+and r4, r3
+
+mov r0, r0, lsr r2
+orr r0, r4 
+mov r1, r1, lsr r2   
+
+ldmfd sp!, {r3-r4, pc}
+
 /* variables here */
 .align 4
 TABELA: .space 128
