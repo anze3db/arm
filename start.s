@@ -113,6 +113,12 @@ str r1, [r2, r0, lsl #2]
 bne _9zanka
 
 
+_10:
+ldr r1, STEV1
+ldr r2, STEV2
+cmp r2, r1
+movgt r1, r2
+
 /* variables here */
 .align 4
 TABELA: .space 128
