@@ -87,9 +87,20 @@ str r2, STEV2
 _wait_for_ever:
   b _wait_for_ever
 
+_7:
+ldr r2, _7STEV2
+ldr r3, _7STEV3
+ldr r1, _7STEV1 /* mov r1, #0 */
+adds r1,r2,r3
+str r1, _7STEV1
+/* Z=1, C=1 */
 
 /* variables here */
 .align 4
+_7STEV1: .space 4
+_7STEV2: .word  0x7FFFFFFF
+_7STEV3: .word  0x8000
+
 _6STEV1: .hword -10
 _6STEV2: .byte 0x64
 _6STEV3: .byte -2
