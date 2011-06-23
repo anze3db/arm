@@ -103,8 +103,20 @@ addne r2, r1, #1
 str r1, STEV3
 str r2, STEV2
 
+_9:
+mov r0, #128
+mov r1, #0
+adr r2, TABELA
+_9zanka:   
+subs r0, #1
+str r1, [r2, r0, lsl #2]
+bne _9zanka
+
+
 /* variables here */
 .align 4
+TABELA: .space 128
+
 _7STEV1: .space 4
 _7STEV2: .word  0x7FFFFFFF
 _7STEV3: .word  0x8000
