@@ -95,6 +95,14 @@ adds r1,r2,r3
 str r1, _7STEV1
 /* Z=1, C=1 */
 
+_8:
+ldr r1, _7STEV3
+tst r1, #0x80000000
+mvnne r1, r1
+addne r2, r1, #1
+str r1, STEV3
+str r2, STEV2
+
 /* variables here */
 .align 4
 _7STEV1: .space 4
